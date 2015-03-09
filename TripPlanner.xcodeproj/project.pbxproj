@@ -12,6 +12,9 @@
 		740531C11AADA4F500912539 /* TPATripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531C01AADA4F500912539 /* TPATripsViewController.m */; };
 		740531C61AADA84600912539 /* TPATripPlanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531C41AADA84600912539 /* TPATripPlanTableViewCell.m */; };
 		740531C71AADA84600912539 /* TPATripPlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740531C51AADA84600912539 /* TPATripPlanTableViewCell.xib */; };
+		740531CB1AADC6FC00912539 /* TPATripPlanForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531CA1AADC6FC00912539 /* TPATripPlanForm.m */; };
+		740531CF1AADC81800912539 /* TPAAddTripPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531CE1AADC81800912539 /* TPAAddTripPlanViewController.m */; };
+		740531D21AADF06B00912539 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531D11AADF06B00912539 /* NSDate+Utilities.m */; };
 		745B6CED1AAD95E600316C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6CEC1AAD95E600316C16 /* main.m */; };
 		745B6CF01AAD95E600316C16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6CEF1AAD95E600316C16 /* AppDelegate.m */; };
 		745B6CF61AAD95E600316C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745B6CF41AAD95E600316C16 /* Main.storyboard */; };
@@ -63,6 +66,12 @@
 		740531C31AADA84600912539 /* TPATripPlanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPATripPlanTableViewCell.h; sourceTree = "<group>"; };
 		740531C41AADA84600912539 /* TPATripPlanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPATripPlanTableViewCell.m; sourceTree = "<group>"; };
 		740531C51AADA84600912539 /* TPATripPlanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPATripPlanTableViewCell.xib; sourceTree = "<group>"; };
+		740531C91AADC6FC00912539 /* TPATripPlanForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPATripPlanForm.h; sourceTree = "<group>"; };
+		740531CA1AADC6FC00912539 /* TPATripPlanForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPATripPlanForm.m; sourceTree = "<group>"; };
+		740531CD1AADC81800912539 /* TPAAddTripPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAAddTripPlanViewController.h; sourceTree = "<group>"; };
+		740531CE1AADC81800912539 /* TPAAddTripPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAAddTripPlanViewController.m; sourceTree = "<group>"; };
+		740531D01AADF06B00912539 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		740531D11AADF06B00912539 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		745B6CE71AAD95E600316C16 /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745B6CEB1AAD95E600316C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		745B6CEC1AAD95E600316C16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -181,6 +190,24 @@
 			path = TripPlanTableViewCell;
 			sourceTree = "<group>";
 		};
+		740531C81AADC6E900912539 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				740531C91AADC6FC00912539 /* TPATripPlanForm.h */,
+				740531CA1AADC6FC00912539 /* TPATripPlanForm.m */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		740531CC1AADC80600912539 /* AddTripPlanViewController */ = {
+			isa = PBXGroup;
+			children = (
+				740531CD1AADC81800912539 /* TPAAddTripPlanViewController.h */,
+				740531CE1AADC81800912539 /* TPAAddTripPlanViewController.m */,
+			);
+			path = AddTripPlanViewController;
+			sourceTree = "<group>";
+		};
 		745B6CDE1AAD95E600316C16 = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +287,8 @@
 		745B6D161AAD971800316C16 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				740531D01AADF06B00912539 /* NSDate+Utilities.h */,
+				740531D11AADF06B00912539 /* NSDate+Utilities.m */,
 				745B6D221AAD97AE00316C16 /* NSString+Utilities.h */,
 				745B6D231AAD97AE00316C16 /* NSString+Utilities.m */,
 				745B6D241AAD97AE00316C16 /* UIAlertView+Blocks.h */,
@@ -273,6 +302,7 @@
 			children = (
 				745B6D461AAD98C900316C16 /* Authentication */,
 				740531BE1AADA4E800912539 /* TripsViewController */,
+				740531CC1AADC80600912539 /* AddTripPlanViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -282,6 +312,7 @@
 			children = (
 				745B6D1F1AAD973F00316C16 /* TPAConstants.h */,
 				745B6D201AAD973F00316C16 /* TPAConstants.m */,
+				740531C81AADC6E900912539 /* Forms */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -524,14 +555,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				740531CF1AADC81800912539 /* TPAAddTripPlanViewController.m in Sources */,
 				745B6CF01AAD95E600316C16 /* AppDelegate.m in Sources */,
 				745B6D4F1AAD98E500316C16 /* TPALoginViewController.m in Sources */,
 				740531C11AADA4F500912539 /* TPATripsViewController.m in Sources */,
 				745B6D211AAD973F00316C16 /* TPAConstants.m in Sources */,
 				745B6D271AAD97AE00316C16 /* UIAlertView+Blocks.m in Sources */,
 				745B6D261AAD97AE00316C16 /* NSString+Utilities.m in Sources */,
+				740531D21AADF06B00912539 /* NSDate+Utilities.m in Sources */,
 				745B6D4C1AAD98D900316C16 /* TPAAuthenticationViewController.m in Sources */,
 				740531C61AADA84600912539 /* TPATripPlanTableViewCell.m in Sources */,
+				740531CB1AADC6FC00912539 /* TPATripPlanForm.m in Sources */,
 				745B6D521AAD98F400316C16 /* TPASignupViewController.m in Sources */,
 				745B6CED1AAD95E600316C16 /* main.m in Sources */,
 			);

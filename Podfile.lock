@@ -1,14 +1,17 @@
 PODS:
+  - FXForms (1.2.12)
   - Kiwi (2.3.1)
   - SVProgressHUD (HEAD based on 1.1.2)
   - TPKeyboardAvoiding (HEAD based on 1.2.6)
 
 DEPENDENCIES:
+  - FXForms
   - Kiwi
   - SVProgressHUD (HEAD)
   - TPKeyboardAvoiding (HEAD)
 
 SPEC CHECKSUMS:
+  FXForms: ae90610432a0a9cbb71e0180f202d0fff375881f
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
   SVProgressHUD: da7a49e789af645d9279ffbca62318945a832438
   TPKeyboardAvoiding: 0797ad5f2366e2435e605202b01f3b7cff5d82cd

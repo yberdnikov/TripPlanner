@@ -11,6 +11,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <Parse/Parse.h>
 #import "TPATripPlanTableViewCell.h"
+#import "TPAAddTripPlanViewController.h"
 
 static const NSInteger kMaxNumberOfRowsPerFetch = 20;
 
@@ -18,7 +19,8 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
 
 @property (weak, nonatomic) IBOutlet UITableView *contentTableView;
 @property (weak, nonatomic) IBOutlet UILabel *noReccordsFoundLabel;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *addTripPlanBarButton;
+@property (weak, nonatomic) IBOutlet UIButton *filterButton;
+@property (weak, nonatomic) IBOutlet UIButton *reportButton;
 
 @property (nonatomic,strong) NSMutableArray *contentDataSource;
 
@@ -39,10 +41,12 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
     
     self.title = NSLocalizedString(@"Trips", nil);
     
-    
     [self.contentTableView registerNib:[UINib nibWithNibName:@"TPATripPlanTableViewCell" bundle:nil]
                 forCellReuseIdentifier:[TPATripPlanTableViewCell reuseIdentifier]];
     self.contentTableView.tableFooterView = [[UIView alloc] init];
+    
+    self.contentDataSource = [[NSMutableArray alloc] init];
+    self.filterButton.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -58,7 +62,8 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
     else
     {
         [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
-        [self loadData:0 withLimit:kMaxNumberOfRowsPerFetch];
+        self.lastFetchedRow = 0;
+        [self loadData:self.lastFetchedRow withLimit:kMaxNumberOfRowsPerFetch];
     }
 }
 
@@ -70,6 +75,23 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
     authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     [self presentViewController:authenticationController animated:NO completion:nil];
+}
+
+#pragma mark - UIButton selector
+
+- (IBAction)monthReportButtonPressed:(UIButton *)sender
+{
+    
+}
+
+- (IBAction)logoutButtonPressed:(UIButton *)sender
+{
+    [PFUser logOut];
+
+    [self.contentDataSource removeAllObjects];
+    [self.contentTableView reloadData];
+    
+    [self presentAuthenticationController];
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -126,7 +148,7 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //self.filterButton.hidden = (!self.contentDataSource.count && !self.filterToDate && !self.filterFromDate);
+    self.filterButton.hidden = (!self.contentDataSource.count && !self.filterToDate && !self.filterFromDate);
     
     if (!self.contentDataSource.count && !self.isLoadingData)
     {
@@ -220,36 +242,27 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
 
 - (void)tableView:(UITableView *)tableView swipeAccessoryButtonPushedForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    JSAAddEntryViewController *addEntryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"addEntryViewController"];
-//    addEntryViewController.entry = [self.contentDataSource objectAtIndex:indexPath.row];
-//    
-//    MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithViewController:addEntryViewController];
-//    formSheet.shouldDismissOnBackgroundViewTap = YES;
-//    formSheet.transitionStyle = MZFormSheetTransitionStyleBounce;
-//    formSheet.cornerRadius = 8.0;
-//    formSheet.presentedFormSheetSize = CGSizeMake(300, 320);
-//    formSheet.movementWhenKeyboardAppears = MZFormSheetWhenKeyboardAppearsCenterVertically;
-//    formSheet.shouldCenterVertically = YES;
-//    
-//    __weak __typeof(MZFormSheetController) *weakFormSheet = formSheet;
-//    __weak __typeof(self) weakSelf = self;
-//    [addEntryViewController setOnDone:^(PFObject *entry) {
-//        [weakFormSheet mz_dismissFormSheetControllerAnimated:YES completionHandler:nil];
-//        
-//        if (!entry)
-//            return;
-//        
-//        [weakSelf.contentDataSource sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
-//        [weakSelf.contentTableView reloadData];
-//        
-//        [weakSelf updateWeekStatisticsLabel];
-//    }];
-//    
-//    [self mz_presentFormSheetController:formSheet animated:YES completionHandler:^(MZFormSheetController *formSheetController) {
-//        
-//    }];
+    TPAAddTripPlanViewController *destinationController = [self.storyboard instantiateViewControllerWithIdentifier:@"addTripPlanViewController"];
+    destinationController.planEntry = [self.contentDataSource objectAtIndex:indexPath.row];
     
+    [self.navigationController pushViewController:destinationController animated:YES];
+
     [tableView setEditing:NO animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Remove seperator inset
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)])
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    
+    // Prevent the cell from inheriting the Table View's margin settings
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)])
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    
+    // Explictly set your cell's layout margins
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)])
+        [cell setLayoutMargins:UIEdgeInsetsZero];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -264,14 +277,14 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
     self.isLoadingData = YES;
     
     PFQuery *query = [PFQuery queryWithClassName:@"TPATripPlan"];
-    [query orderBySortDescriptor:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+    [query orderBySortDescriptor:[NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES]];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
     
     if (self.filterFromDate)
-        [query whereKey:@"date" greaterThanOrEqualTo:@([self.filterFromDate timeIntervalSince1970])];
+        [query whereKey:@"startDate" greaterThanOrEqualTo:@([self.filterFromDate timeIntervalSince1970])];
     
     if (self.filterToDate)
-        [query whereKey:@"date" lessThanOrEqualTo:@([self.filterToDate timeIntervalSince1970])];
+        [query whereKey:@"endDate" lessThanOrEqualTo:@([self.filterToDate timeIntervalSince1970])];
     
     query.limit = limit;
     query.skip = startRow;

@@ -7,6 +7,7 @@
 //
 
 #import "TPATripPlanTableViewCell.h"
+#import "NSDate+Utilities.h"
 
 @interface TPATripPlanTableViewCell ()
 
@@ -54,6 +55,25 @@
     self.destinationLabel.text = planInfo[@"destination"];
     self.startDateLabel.text = [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:[planInfo[@"startDate"] doubleValue]]];
     self.endDateLabel.text = [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:[planInfo[@"endDate"] doubleValue]]];
+    
+    if ([planInfo[@"comment"] isKindOfClass:[NSString class]] && [planInfo[@"comment"] length])
+    {
+        self.commentLabel.text = planInfo[@"comment"];
+        self.commentTitleLabel.text = NSLocalizedString(@"COMMENT", nil);
+    }
+    else
+    {
+        self.commentTitleLabel.text = nil;
+        self.commentLabel.text = nil;
+    }
+    
+    NSInteger daysToStart = [[[NSDate date] dateAtStartOfDay] daysBeforeDate:[[NSDate dateWithTimeIntervalSince1970:[planInfo[@"startDate"] doubleValue]] dateAtStartOfDay]];
+    if (daysToStart > 0)
+    {
+        self.daysToStartTitleLabel.hidden = NO;
+        self.daysToStartLabel.hidden = NO;
+        self.daysToStartLabel.text = [NSString stringWithFormat:@"%ld %@", (long)daysToStart, daysToStart > 1 ? NSLocalizedString(@"days", nil) : NSLocalizedString(@"day", nil)];
+    }
 }
 
 @end
