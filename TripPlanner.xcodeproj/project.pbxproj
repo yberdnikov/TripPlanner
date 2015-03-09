@@ -18,6 +18,21 @@
 		740531D61AAE00AB00912539 /* TPATravelPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531D51AAE00AB00912539 /* TPATravelPlanViewController.m */; };
 		740531DE1AAE377900912539 /* TPAFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531DD1AAE377900912539 /* TPAFiltersViewController.m */; };
 		740531E11AAE3CF500912539 /* TPATripFilterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531E01AAE3CF500912539 /* TPATripFilterForm.m */; };
+		740531E21AAE47DD00912539 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D111AAD971800316C16 /* Bolts.framework */; };
+		740531E31AAE47DD00912539 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D121AAD971800316C16 /* Parse.framework */; };
+		740531E41AAE47DD00912539 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D131AAD971800316C16 /* ParseCrashReporting.framework */; };
+		740531E61AAE47DD00912539 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D151AAD971800316C16 /* ParseUI.framework */; };
+		740531E71AAE49D300912539 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D2C1AAD97D600316C16 /* Accounts.framework */; };
+		740531E81AAE49D300912539 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D321AAD980A00316C16 /* CoreAudio.framework */; };
+		740531EA1AAE49D300912539 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740531E91AAE49D300912539 /* CFNetwork.framework */; };
+		740531EB1AAE49DA00912539 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D281AAD97CC00316C16 /* libstdc++.dylib */; };
+		740531EC1AAE49F100912539 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D3C1AAD984200316C16 /* AudioToolbox.framework */; };
+		740531ED1AAE4A0000912539 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D2E1AAD97DA00316C16 /* Social.framework */; };
+		740531EE1AAE4A0F00912539 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D301AAD97E400316C16 /* SystemConfiguration.framework */; };
+		740531EF1AAE4A1B00912539 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D3A1AAD983600316C16 /* libsqlite3.dylib */; };
+		740531F01AAE4A3200912539 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D381AAD983100316C16 /* libz.dylib */; };
+		740531F11AAE4A4B00912539 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D341AAD981B00316C16 /* StoreKit.framework */; };
+		740531F21AAE4A8B00912539 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D421AAD987200316C16 /* MobileCoreServices.framework */; };
 		745B6CED1AAD95E600316C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6CEC1AAD95E600316C16 /* main.m */; };
 		745B6CF01AAD95E600316C16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6CEF1AAD95E600316C16 /* AppDelegate.m */; };
 		745B6CF61AAD95E600316C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745B6CF41AAD95E600316C16 /* Main.storyboard */; };
@@ -81,6 +96,7 @@
 		740531DD1AAE377900912539 /* TPAFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAFiltersViewController.m; sourceTree = "<group>"; };
 		740531DF1AAE3CF500912539 /* TPATripFilterForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPATripFilterForm.h; sourceTree = "<group>"; };
 		740531E01AAE3CF500912539 /* TPATripFilterForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPATripFilterForm.m; sourceTree = "<group>"; };
+		740531E91AAE49D300912539 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		745B6CE71AAD95E600316C16 /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745B6CEB1AAD95E600316C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		745B6CEC1AAD95E600316C16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,7 +111,6 @@
 		745B6D111AAD971800316C16 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		745B6D121AAD971800316C16 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		745B6D131AAD971800316C16 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		745B6D141AAD971800316C16 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		745B6D151AAD971800316C16 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		745B6D1F1AAD973F00316C16 /* TPAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAConstants.h; sourceTree = "<group>"; };
 		745B6D201AAD973F00316C16 /* TPAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAConstants.m; sourceTree = "<group>"; };
@@ -162,7 +177,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				740531F21AAE4A8B00912539 /* MobileCoreServices.framework in Frameworks */,
+				740531F11AAE4A4B00912539 /* StoreKit.framework in Frameworks */,
+				740531F01AAE4A3200912539 /* libz.dylib in Frameworks */,
+				740531EF1AAE4A1B00912539 /* libsqlite3.dylib in Frameworks */,
+				740531EE1AAE4A0F00912539 /* SystemConfiguration.framework in Frameworks */,
+				740531ED1AAE4A0000912539 /* Social.framework in Frameworks */,
+				740531EC1AAE49F100912539 /* AudioToolbox.framework in Frameworks */,
+				740531EB1AAE49DA00912539 /* libstdc++.dylib in Frameworks */,
+				740531EA1AAE49D300912539 /* CFNetwork.framework in Frameworks */,
+				740531E71AAE49D300912539 /* Accounts.framework in Frameworks */,
+				740531E81AAE49D300912539 /* CoreAudio.framework in Frameworks */,
+				740531E61AAE47DD00912539 /* ParseUI.framework in Frameworks */,
 				3EE8D89A0178893A3D03E926 /* libPods-TripPlannerTests.a in Frameworks */,
+				740531E31AAE47DD00912539 /* Parse.framework in Frameworks */,
+				740531E21AAE47DD00912539 /* Bolts.framework in Frameworks */,
+				740531E41AAE47DD00912539 /* ParseCrashReporting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +337,6 @@
 				745B6D111AAD971800316C16 /* Bolts.framework */,
 				745B6D121AAD971800316C16 /* Parse.framework */,
 				745B6D131AAD971800316C16 /* ParseCrashReporting.framework */,
-				745B6D141AAD971800316C16 /* ParseFacebookUtils.framework */,
 				745B6D151AAD971800316C16 /* ParseUI.framework */,
 			);
 			path = 3rdParty;
@@ -396,6 +425,7 @@
 		AD0E13181821926B6CE2C52E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				740531E91AAE49D300912539 /* CFNetwork.framework */,
 				745B6D441AAD987800316C16 /* CoreLocation.framework */,
 				745B6D421AAD987200316C16 /* MobileCoreServices.framework */,
 				745B6D401AAD986600316C16 /* CoreGraphics.framework */,
@@ -757,6 +787,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/TripPlanner/3rdParty",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -777,6 +808,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/TripPlanner/3rdParty",
 				);
 				INFOPLIST_FILE = TripPlannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
