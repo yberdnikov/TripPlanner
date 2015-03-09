@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FXForms.h"
 #import <Parse/Parse.h>
 
-@interface TPAAddTripPlanViewController : UIViewController <FXFormControllerDelegate>
+@interface TPAAddTripPlanViewController : UIViewController
 
 @property (nonatomic, strong) PFObject *planEntry;
 

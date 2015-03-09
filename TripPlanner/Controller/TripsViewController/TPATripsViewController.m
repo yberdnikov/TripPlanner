@@ -12,6 +12,7 @@
 #import <Parse/Parse.h>
 #import "TPATripPlanTableViewCell.h"
 #import "TPAAddTripPlanViewController.h"
+#import "TPAFiltersViewController.h"
 
 static const NSInteger kMaxNumberOfRowsPerFetch = 20;
 
@@ -21,6 +22,7 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
 @property (weak, nonatomic) IBOutlet UILabel *noReccordsFoundLabel;
 @property (weak, nonatomic) IBOutlet UIButton *filterButton;
 @property (weak, nonatomic) IBOutlet UIButton *reportButton;
+@property (weak, nonatomic) IBOutlet UILabel *filterRangeLabel;
 
 @property (nonatomic,strong) NSMutableArray *contentDataSource;
 
@@ -31,6 +33,8 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
 @property (nonatomic, strong) NSDate *filterFromDate;
 @property (nonatomic, strong) NSDate *filterToDate;
 
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
 @end
 
 @implementation TPATripsViewController
@@ -40,6 +44,9 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Trips", nil);
+    
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    [self.dateFormatter setDateFormat:@"MM/dd/yyyy"];
     
     [self.contentTableView registerNib:[UINib nibWithNibName:@"TPATripPlanTableViewCell" bundle:nil]
                 forCellReuseIdentifier:[TPATripPlanTableViewCell reuseIdentifier]];
@@ -79,9 +86,60 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
 
 #pragma mark - UIButton selector
 
+- (IBAction)filterButtonPressed:(UIButton *)sender
+{
+    TPAFiltersViewController *filtersViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"filtersViewController"];
+    filtersViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    if (self.filterFromDate || self.filterToDate)
+    {
+        TPATripFilterForm *filterForm = [[TPATripFilterForm alloc] init];
+        filterForm.startDate = self.filterFromDate;
+        filterForm.endDate = self.filterToDate;
+        
+        filtersViewController.filterFormData = filterForm;
+    }
+
+    __weak __typeof(self) weakSelf = self;
+    __weak __typeof(filtersViewController) weakFiltersViewController = filtersViewController;
+    
+    [filtersViewController setOnDatesSelected:^(BOOL isCanceled) {
+        __typeof(weakSelf) strongSelf = weakSelf;
+        __typeof(weakFiltersViewController) strongFiltersViewController = weakFiltersViewController;
+        
+        if (isCanceled)
+            [strongSelf dismissViewControllerAnimated:YES completion:nil];
+        
+        if (strongSelf.filterFromDate != strongFiltersViewController.filterFormData.startDate ||
+            strongSelf.filterToDate != strongFiltersViewController.filterFormData.endDate)
+        {
+            strongSelf.filterFromDate = strongFiltersViewController.filterFormData.startDate;
+            strongSelf.filterToDate = strongFiltersViewController.filterFormData.endDate;
+            
+            strongSelf.filterRangeLabel.text = [strongSelf filterTimeRangeText];
+            
+            strongSelf.lastFetchedRow = 0;
+            [strongSelf loadData:strongSelf.lastFetchedRow withLimit:kMaxNumberOfRowsPerFetch];
+            
+            [strongSelf.contentDataSource removeAllObjects];
+            [strongSelf.contentTableView reloadData];
+        }
+        
+        [strongSelf dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    self.providesPresentationContextTransitionStyle = YES;
+    self.definesPresentationContext = YES;
+    [filtersViewController setModalPresentationStyle:UIModalPresentationOverFullScreen];
+    
+    [self presentViewController:filtersViewController animated:YES completion:nil];
+}
+
 - (IBAction)logoutButtonPressed:(UIButton *)sender
 {
     [PFUser logOut];
+    
+    self.filterRangeLabel.text = nil;
 
     [self.contentDataSource removeAllObjects];
     [self.contentTableView reloadData];
@@ -325,6 +383,17 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
         
         [weakSelf.contentTableView reloadData];
     }];
+}
+
+#pragma mark - Helpers
+
+- (NSString *)filterTimeRangeText
+{
+    if (!self.filterFromDate && !self.filterToDate)
+        return nil;
+    
+    return [NSString stringWithFormat:@"%@ - %@", [self.dateFormatter stringFromDate:self.filterFromDate],
+            [self.dateFormatter stringFromDate:self.filterToDate]];
 }
 
 @end

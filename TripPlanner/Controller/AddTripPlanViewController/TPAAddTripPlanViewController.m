@@ -12,7 +12,7 @@
 #import "UIAlertView+Blocks.h"
 #import <SVProgressHUD.h>
 
-@interface TPAAddTripPlanViewController ()
+@interface TPAAddTripPlanViewController () <FXFormControllerDelegate>
 
 @property (nonatomic, strong) FXFormController *formController;
 @property (weak, nonatomic) IBOutlet UITableView *contentTableView;
