@@ -15,6 +15,7 @@
 		740531CB1AADC6FC00912539 /* TPATripPlanForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531CA1AADC6FC00912539 /* TPATripPlanForm.m */; };
 		740531CF1AADC81800912539 /* TPAAddTripPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531CE1AADC81800912539 /* TPAAddTripPlanViewController.m */; };
 		740531D21AADF06B00912539 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531D11AADF06B00912539 /* NSDate+Utilities.m */; };
+		740531D61AAE00AB00912539 /* TPATravelPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531D51AAE00AB00912539 /* TPATravelPlanViewController.m */; };
 		745B6CED1AAD95E600316C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6CEC1AAD95E600316C16 /* main.m */; };
 		745B6CF01AAD95E600316C16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6CEF1AAD95E600316C16 /* AppDelegate.m */; };
 		745B6CF61AAD95E600316C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745B6CF41AAD95E600316C16 /* Main.storyboard */; };
@@ -72,6 +73,8 @@
 		740531CE1AADC81800912539 /* TPAAddTripPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAAddTripPlanViewController.m; sourceTree = "<group>"; };
 		740531D01AADF06B00912539 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		740531D11AADF06B00912539 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		740531D41AAE00AB00912539 /* TPATravelPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPATravelPlanViewController.h; sourceTree = "<group>"; };
+		740531D51AAE00AB00912539 /* TPATravelPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPATravelPlanViewController.m; sourceTree = "<group>"; };
 		745B6CE71AAD95E600316C16 /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745B6CEB1AAD95E600316C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		745B6CEC1AAD95E600316C16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -208,6 +211,15 @@
 			path = AddTripPlanViewController;
 			sourceTree = "<group>";
 		};
+		740531D31AAE009000912539 /* TravelPlanViewController */ = {
+			isa = PBXGroup;
+			children = (
+				740531D41AAE00AB00912539 /* TPATravelPlanViewController.h */,
+				740531D51AAE00AB00912539 /* TPATravelPlanViewController.m */,
+			);
+			path = TravelPlanViewController;
+			sourceTree = "<group>";
+		};
 		745B6CDE1AAD95E600316C16 = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +315,7 @@
 				745B6D461AAD98C900316C16 /* Authentication */,
 				740531BE1AADA4E800912539 /* TripsViewController */,
 				740531CC1AADC80600912539 /* AddTripPlanViewController */,
+				740531D31AAE009000912539 /* TravelPlanViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -564,6 +577,7 @@
 				745B6D261AAD97AE00316C16 /* NSString+Utilities.m in Sources */,
 				740531D21AADF06B00912539 /* NSDate+Utilities.m in Sources */,
 				745B6D4C1AAD98D900316C16 /* TPAAuthenticationViewController.m in Sources */,
+				740531D61AAE00AB00912539 /* TPATravelPlanViewController.m in Sources */,
 				740531C61AADA84600912539 /* TPATripPlanTableViewCell.m in Sources */,
 				740531CB1AADC6FC00912539 /* TPATripPlanForm.m in Sources */,
 				745B6D521AAD98F400316C16 /* TPASignupViewController.m in Sources */,

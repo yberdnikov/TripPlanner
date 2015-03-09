@@ -79,11 +79,6 @@ static const NSInteger kMaxNumberOfRowsPerFetch = 20;
 
 #pragma mark - UIButton selector
 
-- (IBAction)monthReportButtonPressed:(UIButton *)sender
-{
-    
-}
-
 - (IBAction)logoutButtonPressed:(UIButton *)sender
 {
     [PFUser logOut];

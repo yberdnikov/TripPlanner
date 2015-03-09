@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuJ-3I-CPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="1361"/>
+            <point key="canvasLocation" x="274" y="1375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4dp-eH-gwQ">
@@ -275,7 +275,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaN-T3-QQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-770" y="1325"/>
+            <point key="canvasLocation" x="-1134" y="1375"/>
         </scene>
         <!--Trips View Controller-->
         <scene sceneID="elL-oy-xQS">
@@ -342,7 +342,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="monthReportButtonPressed:" destination="yjy-DF-TfL" eventType="touchUpInside" id="Drd-uh-Ugp"/>
+                                            <segue destination="WH4-Oy-83M" kind="push" id="XJ9-uA-L3h"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSI-gL-iEs">
@@ -416,7 +416,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAC-V5-RY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-108" y="1327"/>
+            <point key="canvasLocation" x="-432" y="1375"/>
+        </scene>
+        <!--Travel Plan View Controller-->
+        <scene sceneID="d1L-4b-XSB">
+            <objects>
+                <viewController storyboardIdentifier="travelPlanViewController" id="WH4-Oy-83M" customClass="TPATravelPlanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zQQ-uL-gEK"/>
+                        <viewControllerLayoutGuide type="bottom" id="rVX-GC-4wN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1wK-yI-WLj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4c-8N-Kdi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L4c-8N-Kdi" firstAttribute="top" secondItem="zQQ-uL-gEK" secondAttribute="bottom" id="KYn-zb-UbW"/>
+                            <constraint firstAttribute="trailing" secondItem="L4c-8N-Kdi" secondAttribute="trailing" id="b2N-eV-Rpy"/>
+                            <constraint firstItem="rVX-GC-4wN" firstAttribute="top" secondItem="L4c-8N-Kdi" secondAttribute="bottom" id="cQs-Cg-xh4"/>
+                            <constraint firstItem="L4c-8N-Kdi" firstAttribute="leading" secondItem="1wK-yI-WLj" secondAttribute="leading" id="dIr-ov-S9O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1bv-XS-H2x"/>
+                    <connections>
+                        <outlet property="reportWebView" destination="L4c-8N-Kdi" id="p9d-GQ-MT0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEI-EN-jKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-432" y="2109"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="xrS-5e-j3c">

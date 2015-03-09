@@ -5,6 +5,7 @@ target 'TripPlanner' do
 pod 'SVProgressHUD', :head
 pod 'TPKeyboardAvoiding', :head
 pod 'FXForms'
+pod 'NSDate+Calendar'
 end
 
 target 'TripPlannerTests' do

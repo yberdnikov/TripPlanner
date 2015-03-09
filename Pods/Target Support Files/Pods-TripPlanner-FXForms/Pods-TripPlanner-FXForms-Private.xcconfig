@@ -1,5 +1,5 @@
 #include "Pods-TripPlanner-FXForms.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/FXForms" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FXForms" "${PODS_ROOT}/Headers/Public/Kiwi" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/TPKeyboardAvoiding"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/FXForms" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FXForms" "${PODS_ROOT}/Headers/Public/Kiwi" "${PODS_ROOT}/Headers/Public/NSDate+Calendar" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/TPKeyboardAvoiding"
 OTHER_LDFLAGS = -ObjC
 PODS_ROOT = ${SRCROOT}
