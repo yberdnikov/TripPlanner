@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		10A229FA852D79664A36E687 /* libPods-TripPlanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA332A0FADB35206D6C99B5 /* libPods-TripPlanner.a */; };
 		3EE8D89A0178893A3D03E926 /* libPods-TripPlannerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D325F7F39658605D7616E179 /* libPods-TripPlannerTests.a */; };
+		651E6AAC1B33813A0051FCDA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651E6AAB1B33813A0051FCDA /* Parse.framework */; };
+		651E6AAE1B33826D0051FCDA /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651E6AAD1B33826D0051FCDA /* ParseUI.framework */; };
 		740531C11AADA4F500912539 /* TPATripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531C01AADA4F500912539 /* TPATripsViewController.m */; };
 		740531C61AADA84600912539 /* TPATripPlanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531C41AADA84600912539 /* TPATripPlanTableViewCell.m */; };
 		740531C71AADA84600912539 /* TPATripPlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740531C51AADA84600912539 /* TPATripPlanTableViewCell.xib */; };
@@ -19,9 +21,7 @@
 		740531DE1AAE377900912539 /* TPAFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531DD1AAE377900912539 /* TPAFiltersViewController.m */; };
 		740531E11AAE3CF500912539 /* TPATripFilterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 740531E01AAE3CF500912539 /* TPATripFilterForm.m */; };
 		740531E21AAE47DD00912539 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D111AAD971800316C16 /* Bolts.framework */; };
-		740531E31AAE47DD00912539 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D121AAD971800316C16 /* Parse.framework */; };
 		740531E41AAE47DD00912539 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D131AAD971800316C16 /* ParseCrashReporting.framework */; };
-		740531E61AAE47DD00912539 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D151AAD971800316C16 /* ParseUI.framework */; };
 		740531E71AAE49D300912539 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D2C1AAD97D600316C16 /* Accounts.framework */; };
 		740531E81AAE49D300912539 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D321AAD980A00316C16 /* CoreAudio.framework */; };
 		740531EA1AAE49D300912539 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740531E91AAE49D300912539 /* CFNetwork.framework */; };
@@ -40,9 +40,7 @@
 		745B6CFB1AAD95E600316C16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 745B6CF91AAD95E600316C16 /* LaunchScreen.xib */; };
 		745B6D071AAD95E600316C16 /* TripPlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6D061AAD95E600316C16 /* TripPlannerTests.m */; };
 		745B6D1A1AAD971800316C16 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D111AAD971800316C16 /* Bolts.framework */; };
-		745B6D1B1AAD971800316C16 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D121AAD971800316C16 /* Parse.framework */; };
 		745B6D1C1AAD971800316C16 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D131AAD971800316C16 /* ParseCrashReporting.framework */; };
-		745B6D1E1AAD971800316C16 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745B6D151AAD971800316C16 /* ParseUI.framework */; };
 		745B6D211AAD973F00316C16 /* TPAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6D201AAD973F00316C16 /* TPAConstants.m */; };
 		745B6D261AAD97AE00316C16 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6D231AAD97AE00316C16 /* NSString+Utilities.m */; };
 		745B6D271AAD97AE00316C16 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B6D251AAD97AE00316C16 /* UIAlertView+Blocks.m */; };
@@ -78,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		60DED5AB50C7422714C032EC /* Pods-TripPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-TripPlanner/Pods-TripPlanner.release.xcconfig"; sourceTree = "<group>"; };
+		651E6AAB1B33813A0051FCDA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		651E6AAD1B33826D0051FCDA /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		72FA575F422493D35C55E467 /* Pods-TripPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TripPlanner/Pods-TripPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 		740531BF1AADA4F500912539 /* TPATripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPATripsViewController.h; sourceTree = "<group>"; };
 		740531C01AADA4F500912539 /* TPATripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPATripsViewController.m; sourceTree = "<group>"; };
@@ -109,9 +109,7 @@
 		745B6D051AAD95E600316C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		745B6D061AAD95E600316C16 /* TripPlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripPlannerTests.m; sourceTree = "<group>"; };
 		745B6D111AAD971800316C16 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		745B6D121AAD971800316C16 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		745B6D131AAD971800316C16 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		745B6D151AAD971800316C16 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		745B6D1F1AAD973F00316C16 /* TPAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPAConstants.h; sourceTree = "<group>"; };
 		745B6D201AAD973F00316C16 /* TPAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPAConstants.m; sourceTree = "<group>"; };
 		745B6D221AAD97AE00316C16 /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
@@ -150,6 +148,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651E6AAC1B33813A0051FCDA /* Parse.framework in Frameworks */,
+				651E6AAE1B33826D0051FCDA /* ParseUI.framework in Frameworks */,
 				745B6D451AAD987800316C16 /* CoreLocation.framework in Frameworks */,
 				745B6D431AAD987200316C16 /* MobileCoreServices.framework in Frameworks */,
 				745B6D411AAD986600316C16 /* CoreGraphics.framework in Frameworks */,
@@ -165,9 +165,7 @@
 				745B6D2D1AAD97D600316C16 /* Accounts.framework in Frameworks */,
 				745B6D2B1AAD97D200316C16 /* libc++.dylib in Frameworks */,
 				745B6D291AAD97CC00316C16 /* libstdc++.dylib in Frameworks */,
-				745B6D1E1AAD971800316C16 /* ParseUI.framework in Frameworks */,
 				10A229FA852D79664A36E687 /* libPods-TripPlanner.a in Frameworks */,
-				745B6D1B1AAD971800316C16 /* Parse.framework in Frameworks */,
 				745B6D1A1AAD971800316C16 /* Bolts.framework in Frameworks */,
 				745B6D1C1AAD971800316C16 /* ParseCrashReporting.framework in Frameworks */,
 			);
@@ -188,9 +186,7 @@
 				740531EA1AAE49D300912539 /* CFNetwork.framework in Frameworks */,
 				740531E71AAE49D300912539 /* Accounts.framework in Frameworks */,
 				740531E81AAE49D300912539 /* CoreAudio.framework in Frameworks */,
-				740531E61AAE47DD00912539 /* ParseUI.framework in Frameworks */,
 				3EE8D89A0178893A3D03E926 /* libPods-TripPlannerTests.a in Frameworks */,
-				740531E31AAE47DD00912539 /* Parse.framework in Frameworks */,
 				740531E21AAE47DD00912539 /* Bolts.framework in Frameworks */,
 				740531E41AAE47DD00912539 /* ParseCrashReporting.framework in Frameworks */,
 			);
@@ -334,10 +330,10 @@
 		745B6D101AAD971800316C16 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				651E6AAD1B33826D0051FCDA /* ParseUI.framework */,
+				651E6AAB1B33813A0051FCDA /* Parse.framework */,
 				745B6D111AAD971800316C16 /* Bolts.framework */,
-				745B6D121AAD971800316C16 /* Parse.framework */,
 				745B6D131AAD971800316C16 /* ParseCrashReporting.framework */,
-				745B6D151AAD971800316C16 /* ParseUI.framework */,
 			);
 			path = 3rdParty;
 			sourceTree = "<group>";
